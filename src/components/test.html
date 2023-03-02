@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .togglehere .item-toggle{
+            display: none;
+        }
+    </style>
+    <ul>
+        <li class="togglehere active">
+            <div class="button">asd</div>
+            <div class="item-toggle">asdasdasdas</div>
+        </li>
+        <li class="togglehere inactive">
+            <div class="button">asd</div>
+            <div class="item-toggle">sadsadas</div>
+        </li>
+        <li class="togglehere inactive">
+            <div class="button">asd</div>
+            <div class="item-toggle">sadsadas</div>
+        </li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".button").click(function(){
+                var item = $(this)
+                if(item.parent().hasClass("inactive")){
+                    item.parent().addClass("active");
+                    item.parent().removeClass("inactive");
+                }else{
+                    item.parent().addClass("inactive");
+                    item.parent().removeClass("active");
+                }
+                
+                $(".togglehere.active .item-toggle").slideDown();
+                item.parent().siblings().removeClass("active");
+                item.parent().siblings().addClass("inactive");
+                $(".togglehere.inactive").children(".item-toggle").slideUp();
+            })
+        });
+    </script>
+</body>
+</html>
