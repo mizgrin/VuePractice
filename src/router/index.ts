@@ -4,8 +4,12 @@ import HomeView from '../views/HomeView.vue'
 // import CounterAppVue from '@/views/CounterApp.vue'
 import ReactionTimerVue from '@/views/ReactionTimer.vue'
 import TaskTracker from '../views/TaskTracker.vue'
-import NotesListVue from '@/views/NotesList.vue'
-import NotesVue from '@/views/Notes.vue'
+import NotesListVue from '../views/NotesList.vue';
+import NotesVue from '../views/Notes.vue';
+import QuizVue from '@/views/Quiz.vue';
+import QuizQuestionsVue from '@/views/QuizQuestions.vue';
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,9 +48,19 @@ const router = createRouter({
     //   component:CounterAppVue
     // },
     {
+      path:'/quiz',
+      name:'quiz',
+      component:QuizVue
+    },
+    {
       path:'/notes',
       name:'notes',
       component:NotesVue
+    },
+    {
+      path:'/quizQuestion/:id',
+      name:"quizQuestion",
+      component:QuizQuestionsVue
     }
   ]
 })

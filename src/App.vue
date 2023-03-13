@@ -13,6 +13,7 @@
        <!-- <RouterLink to = "/counter">Counter</RouterLink> -->
         <RouterLink to = "/tasktracker">View Task Tracker</RouterLink>
         <RouterLink to = "/notes">Notes</RouterLink>
+        <RouterLink to="/quiz">Quiz</RouterLink>
       </nav>
     </div>
 
